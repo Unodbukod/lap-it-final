@@ -6,9 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
 import { DialogClose, DialogFooter } from "@/components/ui/dialog";
-
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "sonner";
 
 interface UpdateContentFormProps {
   getId: () => string; // Define the type for the getId prop
@@ -58,10 +56,10 @@ const UpdateCardForm: React.FC<UpdateContentFormProps> = ({ getId }) => {
       }
 
       // Content updated successfully
-      alert("Card Updated!"); // Specify the position here
-      console.log("Content updated successfully");
+      toast.success("Card Updated Successfully")
+      window.location.reload();
     } catch (error) {
-      console.error("Error updating content:", error);
+      toast.error("Error updating content");
     }
   };
 

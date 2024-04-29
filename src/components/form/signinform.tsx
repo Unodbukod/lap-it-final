@@ -13,10 +13,9 @@ import {
 } from "../ui/form";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { FaGoogle } from "react-icons/fa";
 import { getSession, signIn } from 'next-auth/react';
 import { useRouter } from "next/navigation";
-
+import { Toaster, toast } from 'sonner'
 
 
 const formSchema = z.object({
@@ -58,7 +57,7 @@ const SignInForm = () => {
               router.push("/login/signin/"); // Default path if role is not recognized
               break;
           }
-          alert("Login successful!");
+          toast.success("Login successful!");
         } else {
           throw new Error("Session not found");
         }
@@ -108,21 +107,8 @@ const SignInForm = () => {
                 className="w-[200px] bg-white text-black  border-b-gray-60 border hover:text-white hover:bg-blue-500"
                 type="submit"
               >
-                Sign In with Email 
-              </Button>
-            </div>
-            <div className="text-center">
-                <h1 className="text-xs text-gray-400">━━━━━━━ OR CONTINUE WITH ━━━━━━━</h1>
-            </div>
-            <div className="flex justify-center">
-              <Button
-                className=" bg-white text-black border border-gray-60 hover:text-white hover:bg-blue-500"
-                type="submit"
-              >
-                <div className="w-6 h-6 mr-2">
-                  <FaGoogle className="mt-[2px] w-5 h-5"/>
-                </div>
-                Sign In with Google
+                Sign In with Email
+
               </Button>
             </div>
             <div className="text-center">

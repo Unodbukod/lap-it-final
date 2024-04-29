@@ -14,7 +14,7 @@ const Card = ({ description, title, iconSrc }: cardprops) => {
         {iconSrc && (
           <div className="mb-4">
             <Image
-              width={10}
+              width={40}
               height={10}
               src={iconSrc}
               alt={title}

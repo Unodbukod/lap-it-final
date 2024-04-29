@@ -38,12 +38,12 @@ const Thirdsection = () => {
 
   return (
     <section className="items-center justify-center py-10 pt-11 select-none bg-blue-50">
-      <div className="max-w-6xl mx-auto px-4">
-        <div>
+      <div className="max-w-[1500px] mx-auto px-4">
+        <div className="">
           <h2 className="text-black text-[16px] sm:text-[25px] md:text-[30px] xl:text-[50px] font-extrabold text-center  ">
             SIT AMET CONSECTETUR
           </h2>
-          <div className=" text-[10px] sm:text-[11px] md:text-[13px] xl:text-[23px] ">
+          <div className=" text-[10px] sm:text-[11px] md:text-[13px] xl:text-[23px]  ">
             <h1 className=" text-gray-500 text-center ">
               Lorem ipsum dolor sit amet consectetur. Id posuere vulputate diam
               facilisis dui consectetur Sed nunc sed nunc ut in diam ultrices blandit.
@@ -64,7 +64,7 @@ const Thirdsection = () => {
 
         
         <div className="flex flex-col items-center justify-center mt-6 lg:flex lg:flex-row  ">
-          <div className="space-y-5 overflow-auto basis-[217px] relative lg:flex lg:flex-row lg:space-y-0 lg:space-x-5 lg:basis-[1000px]">
+          <div className="space-y-5 overflow-auto basis-[217px] relative lg:flex lg:flex-row lg:space-y-0 lg:space-x-5 lg:basis-[1000px] xl:basis-[1800px]">
           {data.map((cards, index) => (
               <div className="space-x-4" key={index}>
                 <Card

@@ -2,7 +2,7 @@ import Footer from '@/app/components/constants/Footer'
 
 
 import React from 'react'
-import Navbar from './landingpage/components/navbar'
+
 import Features from './landingpage/Features'
 import Thirdsection from './landingpage/Thirdsec'
 import Fourthsec from './landingpage/Fourthsec'
@@ -13,6 +13,7 @@ import Contact from './landingpage/Contact'
 import Home from './landingpage/Home'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
+import Navbar from './landingpage/components/navbar'
 
 
 const Page = async () => {

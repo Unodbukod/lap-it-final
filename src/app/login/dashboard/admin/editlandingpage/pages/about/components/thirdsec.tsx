@@ -6,7 +6,7 @@ const Thirdsection = () => {
   return (
     <div>
       <div className="flex">
-        <div className="w-screen h-[150vh] relative">
+        <div className="w-screen h-[150vh] relative mt-20">
           <div className="flex flex-col">
             <div className="text-center">
               <h1 className="text-[48px] font-extrabold mx-28">VISIT US</h1>

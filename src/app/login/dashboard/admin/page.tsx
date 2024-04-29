@@ -1,9 +1,12 @@
+
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 import React from "react";
 import Image from "next/image";
+import SignoutButton from "../../../../components/form/signoutbutton";
 // Triaged, use ternary operator, and create a separate component for nav bar and wrap it inside the layout.tsx
 const Page = async () => {
+  
   const session = await getServerSession(authOptions);
   console.log(session);
   if (session?.user.role == "admin") {
@@ -18,42 +21,44 @@ const Page = async () => {
             <p className="mb-4 text-gray-600">
               Welcome, <strong>{session?.user.companyName}</strong>!
             </p>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  className="flex items-center p-2 space-x-3 text-gray-700 rounded-md hover:bg-gray-200"
-                >
-                  <span>Home</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="flex items-center p-2 space-x-3 text-gray-700 rounded-md hover:bg-gray-200"
-                >
-                  <span>Profile</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/login/dashboard/admin/editlandingpage"
-                  className="flex items-center p-2 space-x-3 text-gray-700 rounded-md hover:bg-gray-200"
-                >
-                  <span>Edit Landing Page</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/login/dashboard/admin/createaccountpage"
-                  className="flex items-center p-2 space-x-3 text-gray-700 rounded-md hover:bg-gray-200"
-                >
-                  <span>Create Account</span>
-                </a>
-              </li>
-              <li></li>
-              {/* Add more nav items here */}
-            </ul>
+            <div className="flex flex-col">
+              <ul className="space-y-3">
+                <li>
+                  <a
+                    href="#"
+                    className="flex items-center p-2 space-x-2 bg-white text-black hover:bg-indigo-600 hover:text-white rounded-lg"
+                  >
+                    <span>Home</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="flex items-center p-2 space-x-3 bg-white text-black hover:bg-indigo-600 hover:text-white rounded-lg"
+                  >
+                    <span>Profile</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/login/dashboard/admin/editlandingpage"
+                    className="flex items-center p-2 space-x-3 bg-white text-black hover:bg-indigo-600 hover:text-white rounded-lg"
+                  >
+                    <span>Edit Landing Page</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/login/dashboard/admin/createaccountpage"
+                    className="flex items-center p-2 space-x-3 bg-white text-black hover:bg-indigo-600 hover:text-white rounded-lg"
+                  >
+                    <span>Create Account</span>
+                  </a>
+                </li>
+
+              </ul>
+              <SignoutButton/>
+            </div>
           </div>
         </div>
         {/* Main Content */}
@@ -69,7 +74,6 @@ const Page = async () => {
   }
   return (
     <h2>
-      {" "}
       Please Login First to see this page <a href="/login/signin">Sign In</a>
     </h2>
   );
